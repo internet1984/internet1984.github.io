@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+fft在分析频谱分析的时候，会有下面四个方面的误差：
+（1）频谱混叠： 奈奎斯特定理已被众所周知了，所以几乎所有人的都知道为了不让频谱混叠，理论上采样频谱大于等于信号的最高频率。那和时域上联系起来的关系是什么呢？
+采样周期的倒数是频谱分辨率，最高频率的倒数是采样周期。
+设定采样点数为N，采样频率fs，最高频率fh，故频谱分辨率f=fs/N,而fs>=2fh，所以可以看出最高频率与频谱分辨率是相互矛盾的，提高频谱分辨率f的同时，在N确定的情况下必定会导致最高频率fh的减小；同样的，提高最高频率fh的同时必会引起f的增大，即分辨率变大。
+ 
+（2）栅栏效应：由于dft是只取k=0,1,2,.......N-1,只能取到离散值，如果频谱之间相隔较大的话也许会将一些中间的信息丢失掉，而用fft计算dft是不可避免的，解决的办法就是增加采样点数N。这样频谱间隔变小，丢失信息的概率减小。
+另外，增加0可以更细致观察频域上的信号，但不会增加频谱分辨率。
+这里有补零对分辨率的影响
+ 
+（3）频谱泄露：是由加窗函数引起的，同样是计算量的问题（用fft用dft必需要加窗函数），时域上的相乘，频域上卷积，引起信号的频谱失真，只有在很少的情况下，频谱泄露是不会发生的，大部分情况都会引起泄露。如x(n)=cos(2π/N),(n=0,1,2,3.....N-1,)  N点的fft则不会发生泄露，但2N，或N+1，N+2等均会引起失真，而引起失真可以从表达式上可以看出  X(K)=卷积以后的频谱在2π/N*k的      取样值，所以如果是2N的dft，为2π/2N*K,相当于N点dft结果各个值中间再取样了一个值，而2π/(N+2)*k,就与N点fft完全不一样了。解决办法，可以扩大窗函数的宽度（时域上的宽了，频域上就窄了，（时域频域有相对性），也就是泄露的能量就小了），或者不要加矩形的窗函数，可以加缓变的窗函数，也可以让泄露的能量变下。
+ 
+因为泄露会照成频谱的扩大，所以也可能会造成频谱混叠的现象，而泄露引起的后果就是降低频谱分辨率。
+ 
+频谱泄露会令主谱线旁边有很多旁瓣，这就会造成谱线间的干扰，更严重就是旁瓣的能量强到分不清是旁瓣还是信号本身的，这就是所谓的谱间干扰
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<p>fft在分析频谱分析的时候，会有下面四个方面的误差：
+（1）频谱混叠： 奈奎斯特定理已被众所周知了，所以几乎所有人的都知道为了不让频谱混叠，理论上采样频谱大于等于信号的最高频率。那和时域上联系起来的关系是什么呢？
+采样周期的倒数是频谱分辨率，最高频率的倒数是采样周期。
+设定采样点数为N，采样频率fs，最高频率fh，故频谱分辨率f=fs/N,而fs&gt;=2fh，所以可以看出最高频率与频谱分辨率是相互矛盾的，提高频谱分辨率f的同时，在N确定的情况下必定会导致最高频率fh的减小；同样的，提高最高频率fh的同时必会引起f的增大，即分辨率变大。</p>
+
+<p>（2）栅栏效应：由于dft是只取k=0,1,2,.......N-1,只能取到离散值，如果频谱之间相隔较大的话也许会将一些中间的信息丢失掉，而用fft计算dft是不可避免的，解决的办法就是增加采样点数N。这样频谱间隔变小，丢失信息的概率减小。
+另外，增加0可以更细致观察频域上的信号，但不会增加频谱分辨率。
+这里有补零对分辨率的影响</p>
+
+<p>（3）频谱泄露：是由加窗函数引起的，同样是计算量的问题（用fft用dft必需要加窗函数），时域上的相乘，频域上卷积，引起信号的频谱失真，只有在很少的情况下，频谱泄露是不会发生的，大部分情况都会引起泄露。如x(n)=cos(2π/N),(n=0,1,2,3.....N-1,)  N点的fft则不会发生泄露，但2N，或N+1，N+2等均会引起失真，而引起失真可以从表达式上可以看出  X(K)=卷积以后的频谱在2π/N<em>k的      取样值，所以如果是2N的dft，为2π/2N</em>K,相当于N点dft结果各个值中间再取样了一个值，而2π/(N+2)*k,就与N点fft完全不一样了。解决办法，可以扩大窗函数的宽度（时域上的宽了，频域上就窄了，（时域频域有相对性），也就是泄露的能量就小了），或者不要加矩形的窗函数，可以加缓变的窗函数，也可以让泄露的能量变下。</p>
+
+<p>因为泄露会照成频谱的扩大，所以也可能会造成频谱混叠的现象，而泄露引起的后果就是降低频谱分辨率。</p>
+
+<p>频谱泄露会令主谱线旁边有很多旁瓣，这就会造成谱线间的干扰，更严重就是旁瓣的能量强到分不清是旁瓣还是信号本身的，这就是所谓的谱间干扰</p>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "fft.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
