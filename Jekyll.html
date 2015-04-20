@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+This latest release of Jekyll includes a slew of enhancements and bug fixes. Some of the highlights:
+
+Strange bug around spacing/indentation should be resolved. It was a curious bug indeed.
+Pages, Posts, and Drafts can now be converted by multiple converters.
+Static files can now be safely included in collections. They’ll be placed in a collection.files array. collection.docs still holds exclusively content with YAML front matter.
+Sass files can once again be rendered by Liquid. However, neither Sass nor CoffeeScript can ever have a layout. Bonus: scssify and sassify Liquid filters.
+Partial variables allowed now in the path argument of include calls
+We added a jekyll help command. Pass it a subcommand to see more info about that subcommand. Or don’t, to see the help for jekyll itself.
+Lots of fixes to the site template we use for jekyll new, including converting the CSS into SCSS.
+The jsonify filter will now call #to_liquid for you
+Lots, lots more!
+One change deserves special note. In #2633, subfolders inside a _posts folder were processed and added as categories to the posts. It turns out, this behaviour was unwanted by a large number of individuals, as it is a handy way to organize posts. Ultimately, we decided to revert this change in #2705, because it was a change in behaviour that was already well-established (at least since Jekyll v0.7.0), and was convenient.
+
+For more excellent CHANGELOG reading material, check out the History page! Happy Jekylling!
+
+Jekyll 2.2.0 Released
+
+RELEASE  29 Jul 2014  parkr parkr
+Jekyll 2.2.0 contains a few key updates:
+
+A warning will now fire if you specify a layout in any of your pages or posts that doesn’t exist.
+Certain Pygments options are now whitelisted in safe mode
+Categories in a post’s path are now respected (i.e. folders in _posts will now work properly).
+As always, a full list of the updates are on the history page. Happy Jekylling!
+
+Jekyll 2.1.1 Released
+
+RELEASE  02 Jul 2014  parkr parkr
+This is a minor release for Jekyll 2.1.0. It fixes a couple bugs and introduces fixes for a couple security-related issues.
+
+It covers two security vulnerabilities:
+
+One in the reading of data
+One in the layouts setting
+They were identified in Jekyll 1.5.1 and has been confirmed as patched in this version and the version used by GitHub Pages. If you are in the business of building Jekyll sites, please ensure you upgrade to 2.1.1 as soon as possible.
+
+For more, check out jekyll/jekyll#2563.
+
+Additionally, the dependency on Maruku has been loosened and a bug was fixed with document URLs.
+
+As always, check out the full changelog for more info!
+
+Happy Jekylling!
+
+Jekyll Turns 21! Err... I mean 2.1.0.
+
+RELEASE  28 Jun 2014  parkr parkr
+Jekyll’s finally legal to drink in the States. And he’s done a lot of learning in the process! Here are some of the new things to look forward to:
+
+Uses the latest Liquid version (2.6.1) (#2495)
+Set front matter defaults for collections (#2419)
+Set a collection-specific URL template (#2418)
+pygments.rb 0.6.0! (#2504)
+.json files in _data (#2369)
+Allow subdirectories in _data (#2395)
+Add support for hl_lines in highlight tag (#2532)
+Post categories now merge with directory, front matter, and defaults (#2373)
+New --skip_initial_build flag for jekyll serve (#2477)
+A bajilion bug fixes and site updates!
+Let’s go party!
+
+Check out the full changelog for more.
+
+Many thanks to these 37 contributors for the 2.1.0 release:
+
+Alberto Grespan, Alessandro Lorenzi, Alex Medearis, Alfred Xing, Anatol Broder, Ben, Ben Balter, Bud Parr, Chezou, Denilson Figueiredo de Sá, Denilson Sá, Ivan Tse, Jens Nazarenus, Jesse Shawl, Jordon Bedwell, Josh Davis, János Rusiczki, Marc Ransome, Mathieu Bruyen, Matt Rogers, Parker Moore, Pat Hawks, Paul Henry, Peter Rhoades, Philipp Rudloff, Quinn Shanahan, Renaud Martinet, Rob Murray, Rodrigo Dumont, Simon Sarris, Terry, Terry Schmidt, Tomer Cohen, XhmikosR, Yihang Ho, jaybe@jekyll, and mikecole.
+
+Pick Up your $1 Jekyll Sticker
+
+PARTNERS  04 Jun 2014  parkr parkr
+Jekyll Sticker
+
+You may have heard that @cobyism’s excellent Jekyll logo has been made into a sticker. You may have sat idly by, wishing that you could have a sticker honoring your beloved Jekyll.
+
+The StickerMule team says, “Pine no longer!” StickerMule has discounted the price of Jekyll stickers down to $1 and are offering free (domestic) shipping! Go grab one now on the StickerMule marketplace – they’ll look swell on your favourite hardware.
+
+Jekyll 2.0.3 Released
+
+RELEASE  09 May 2014  parkr parkr
+Hey again! Just wanted to let you know we’ve released another version of Jekyll, jam-packed with bug fixes.
+
+A huge “thank you” is in order for all the folks who have submitted bug reports over the last 2 days — your input is what allows this project to continue. It’s always a pain to deal with a MAJOR version bump release, but it’s been pretty smooth so far and you have all been nice about the flaws you’ve found in the tool. Keep filing those reports so we can continue to make Jekyll even better!
+
+Thank you to the contributors that contributed code to 2.0.1, 2.0.2, and/or 2.0.3:
+
+Parker Moore, Yi Zeng, Gabe Ortiz, Aaron Broder, Alberto Grespan, gpxl, David Briggs, Kevin Ingersoll, and Troy Swanson.
+
+As always, check out the changelog for more info. Happy Jekylling!
+
+Jekyll turns 2.0.0
+
+RELEASE  06 May 2014  parkr parkr
+A year ago to the day, we released Jekyll 1.0.0. One year later, we present to you the next major version: Jekyll 2.0.0.
+
+Jam-packed with some highly-requested features and bugfixes galore, this is the best Jekyll yet. Some notable changes:
+
+Collections - Collections allow you to define an unlimited number of custom document types (beyond just posts and pages) for different types of content you may want to author in Jekyll such as API documentation or a cookbook!
+Brand new site template (thanks @jglovier!) - Getting started with Jekyll just got a lot easier and a lot more beautiful. Just run jekyll new <path> and you’re good to go.
+Native Sass & CoffeeScript support - We love CSS and JavaScript as much as the next guy, but there will always be a special place in our hearts for Sass and CoffeeScript. We now offer native support for these file types — no more messing around with Rake or Grunt!
+YAML Front Matter defaults - If you’ve set layout: post more than once in your life, you’ll love this new feature: set front matter defaults for a given directory or type.
+Custom markdown processors - Always wanted to use your favourite home-grown Markdown converter, but couldn’t with Jekyll? Now you can. Simply specify markdown: MyConverterClass and you’re on your way.
+Addition of where and group_by Liquid filters - Simplifying your Liquid templates one filter at a time. The where filter selects from an array all items within which have a given value for a property. The group_by filter groups all items in an array which have the same value for a given property.
+Switch from Maruku to Kramdown as default markdown converter - Maruku is dead. We’ve replaced it with the converter which has the closest feature parity: Kramdown!
+Check out our changelog for a complete list of all (200+) changes.
+
+Many thanks to these 183 contributors for making Jekyll 2.0.0 happen:
+
+Parker Moore, Matt Rogers, maul.esel, Anatol Broder, Zach Gersh, Joel Glovier, Ben Balter, XhmikosR, Coby Chapple, John Piasetzki, Aidan Feldman, Robin Dupret, Pascal Borreli, Troy Swanson, Erik Michaels-Ober, albertogg, Lucas Jenss, Matt Rogers & Persa Zula, Eric Mill, Shigeya Suzuki, Jens Nazarenus, ddavison, Pat Hawks, Rob Wierzbowski, MURAOKA Taro, Casey Lang, Fabian Rodriguez, Greg Karékinian, Zlatan Vasović, Christopher Nicotera, Dmitry Chestnykh, Ryan Morrissey, Jordon, John Hughes, akira yamada, Matt Swanson, Jashank Jeremy, Matthew Iversen, Meeka, liufengyun, Anand Narayan, nitoyon, Geoff Shannon, Benjamin J. Balter, Juan Ignacio Donoso, David Briggs, Benjamin Esham, Slava Pavlutin, Assaf Gelber, Josh Brown, Nick Fagerlund, Davide Ficano, pilosus, Anthony Smith, André Arko, Mikael Konutgan, Matthew Scharley, Dan Tao, scribu, Mort Yao, m, Stephen McDonald, Marcus Stollsteimer, Thomas Torsney-Weir, Jordon Bedwell, Tom Preston-Werner, Lincoln Mullen, Philip Poots, Ivan Tse, Christopher Giroir, Valery Tolstov, Wlodek Bzyl, Xavier Noria, Yi Zeng, Persa Zula, Phil Leggetter, Pirogov Evgenij, Rafael Revi, Rob McGuire-Dale, Rob Muhlestein, Robin Mehner, Roland Warmerdam, Rusty Geldmacher, Sam Rayner, Santeri Paavolainen, Sebastian Morr, Stephan Groß, Steven Spasbo, Tobias Brunner, Tuomas Kareinen, Tyler Margison, Uwe Dauernheim, Yihang Ho, Zach Leatherman, Zequez, andrew morton, andrewhavens, imathis, jannypie, jaybe@jekyll, kk_Ataka, markets, redwallhp, schneems, szymzet, thomasdao, tomsugden, wǒis神仙, 张君君, Noah Slater, Abhi Yerra, Adam Heckler, Ahmed Hazem, Aigars Dzerviniks, Aleksey V. Zapparov, Andreas Möller, Andy Lindeman, Arlen Cuss, Aziz Shamim, Ben Baker-Smith, Ben Hanzl, Ben Hildred, Brian Kim, Brice, Carol Nichols, Chezou, Chris Jones, Christian Grobmeier, Christoph Hochstrasser, Christoph Schiessl, Clint Shryock, Colin Dean, Corey Ward, Damian Lettie, Daniel Schauenberg, David Ensinger, David Paschich, David Sawyer, David Silva Smith, Donald Perry, Doug Johnston, Edward Ball, Eric Dobson, Erik Dungan, Florent Guilleux, Francis, Frederic ROS, GSI2013, Garen Torikian, George Anderson, Giuseppe Capizzi, Ishibashi Hideto, Jarrod Birch, Jeff Kolesky, Jens Bissinger, Jens Krause, John Firebaugh, John Papandriopoulos, Josh Branchaud, Katy DeCorah, Lachlan Holden, Mark Prins, Markus Roth, Martin Charles, Matt Iversen, Matt Sheehan, Matt Swensen, Matthias Vogelgesang, Michael Parker, Miha Rekar, Nathan Youngman, Nick Quaranto, Nick Quinlan, Nick Schonning, Nicolas Alpi, Nicolás Reynolds, Nikkau, 4ensicLog, Octavian Damiean, Olov Lassus, PatrickC8t, Paul Annesley, and Paul Oppenheim.
+
+Happy developing!
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<p>This latest release of Jekyll includes a slew of enhancements and bug fixes. Some of the highlights:</p>
+
+<p>Strange bug around spacing/indentation should be resolved. It was a curious bug indeed.
+Pages, Posts, and Drafts can now be converted by multiple converters.
+Static files can now be safely included in collections. They’ll be placed in a collection.files array. collection.docs still holds exclusively content with YAML front matter.
+Sass files can once again be rendered by Liquid. However, neither Sass nor CoffeeScript can ever have a layout. Bonus: scssify and sassify Liquid filters.
+Partial variables allowed now in the path argument of include calls
+We added a jekyll help command. Pass it a subcommand to see more info about that subcommand. Or don’t, to see the help for jekyll itself.
+Lots of fixes to the site template we use for jekyll new, including converting the CSS into SCSS.
+The jsonify filter will now call #to_liquid for you
+Lots, lots more!
+One change deserves special note. In #2633, subfolders inside a _posts folder were processed and added as categories to the posts. It turns out, this behaviour was unwanted by a large number of individuals, as it is a handy way to organize posts. Ultimately, we decided to revert this change in #2705, because it was a change in behaviour that was already well-established (at least since Jekyll v0.7.0), and was convenient.</p>
+
+<p>For more excellent CHANGELOG reading material, check out the History page! Happy Jekylling!</p>
+
+<p>Jekyll 2.2.0 Released</p>
+
+<p>RELEASE  29 Jul 2014  parkr parkr
+Jekyll 2.2.0 contains a few key updates:</p>
+
+<p>A warning will now fire if you specify a layout in any of your pages or posts that doesn’t exist.
+Certain Pygments options are now whitelisted in safe mode
+Categories in a post’s path are now respected (i.e. folders in _posts will now work properly).
+As always, a full list of the updates are on the history page. Happy Jekylling!</p>
+
+<p>Jekyll 2.1.1 Released</p>
+
+<p>RELEASE  02 Jul 2014  parkr parkr
+This is a minor release for Jekyll 2.1.0. It fixes a couple bugs and introduces fixes for a couple security-related issues.</p>
+
+<p>It covers two security vulnerabilities:</p>
+
+<p>One in the reading of data
+One in the layouts setting
+They were identified in Jekyll 1.5.1 and has been confirmed as patched in this version and the version used by GitHub Pages. If you are in the business of building Jekyll sites, please ensure you upgrade to 2.1.1 as soon as possible.</p>
+
+<p>For more, check out jekyll/jekyll#2563.</p>
+
+<p>Additionally, the dependency on Maruku has been loosened and a bug was fixed with document URLs.</p>
+
+<p>As always, check out the full changelog for more info!</p>
+
+<p>Happy Jekylling!</p>
+
+<p>Jekyll Turns 21! Err... I mean 2.1.0.</p>
+
+<p>RELEASE  28 Jun 2014  parkr parkr
+Jekyll’s finally legal to drink in the States. And he’s done a lot of learning in the process! Here are some of the new things to look forward to:</p>
+
+<p>Uses the latest Liquid version (2.6.1) (#2495)
+Set front matter defaults for collections (#2419)
+Set a collection-specific URL template (#2418)
+pygments.rb 0.6.0! (#2504)
+.json files in <em>data (#2369)
+Allow subdirectories in _data (#2395)
+Add support for hl</em>lines in highlight tag (#2532)
+Post categories now merge with directory, front matter, and defaults (#2373)
+New --skip<em>initial</em>build flag for jekyll serve (#2477)
+A bajilion bug fixes and site updates!
+Let’s go party!</p>
+
+<p>Check out the full changelog for more.</p>
+
+<p>Many thanks to these 37 contributors for the 2.1.0 release:</p>
+
+<p>Alberto Grespan, Alessandro Lorenzi, Alex Medearis, Alfred Xing, Anatol Broder, Ben, Ben Balter, Bud Parr, Chezou, Denilson Figueiredo de Sá, Denilson Sá, Ivan Tse, Jens Nazarenus, Jesse Shawl, Jordon Bedwell, Josh Davis, János Rusiczki, Marc Ransome, Mathieu Bruyen, Matt Rogers, Parker Moore, Pat Hawks, Paul Henry, Peter Rhoades, Philipp Rudloff, Quinn Shanahan, Renaud Martinet, Rob Murray, Rodrigo Dumont, Simon Sarris, Terry, Terry Schmidt, Tomer Cohen, XhmikosR, Yihang Ho, jaybe@jekyll, and mikecole.</p>
+
+<p>Pick Up your $1 Jekyll Sticker</p>
+
+<p>PARTNERS  04 Jun 2014  parkr parkr
+Jekyll Sticker</p>
+
+<p>You may have heard that @cobyism’s excellent Jekyll logo has been made into a sticker. You may have sat idly by, wishing that you could have a sticker honoring your beloved Jekyll.</p>
+
+<p>The StickerMule team says, “Pine no longer!” StickerMule has discounted the price of Jekyll stickers down to $1 and are offering free (domestic) shipping! Go grab one now on the StickerMule marketplace – they’ll look swell on your favourite hardware.</p>
+
+<p>Jekyll 2.0.3 Released</p>
+
+<p>RELEASE  09 May 2014  parkr parkr
+Hey again! Just wanted to let you know we’ve released another version of Jekyll, jam-packed with bug fixes.</p>
+
+<p>A huge “thank you” is in order for all the folks who have submitted bug reports over the last 2 days — your input is what allows this project to continue. It’s always a pain to deal with a MAJOR version bump release, but it’s been pretty smooth so far and you have all been nice about the flaws you’ve found in the tool. Keep filing those reports so we can continue to make Jekyll even better!</p>
+
+<p>Thank you to the contributors that contributed code to 2.0.1, 2.0.2, and/or 2.0.3:</p>
+
+<p>Parker Moore, Yi Zeng, Gabe Ortiz, Aaron Broder, Alberto Grespan, gpxl, David Briggs, Kevin Ingersoll, and Troy Swanson.</p>
+
+<p>As always, check out the changelog for more info. Happy Jekylling!</p>
+
+<p>Jekyll turns 2.0.0</p>
+
+<p>RELEASE  06 May 2014  parkr parkr
+A year ago to the day, we released Jekyll 1.0.0. One year later, we present to you the next major version: Jekyll 2.0.0.</p>
+
+<p>Jam-packed with some highly-requested features and bugfixes galore, this is the best Jekyll yet. Some notable changes:</p>
+
+<p>Collections - Collections allow you to define an unlimited number of custom document types (beyond just posts and pages) for different types of content you may want to author in Jekyll such as API documentation or a cookbook!
+Brand new site template (thanks @jglovier!) - Getting started with Jekyll just got a lot easier and a lot more beautiful. Just run jekyll new <path> and you’re good to go.
+Native Sass &amp; CoffeeScript support - We love CSS and JavaScript as much as the next guy, but there will always be a special place in our hearts for Sass and CoffeeScript. We now offer native support for these file types — no more messing around with Rake or Grunt!
+YAML Front Matter defaults - If you’ve set layout: post more than once in your life, you’ll love this new feature: set front matter defaults for a given directory or type.
+Custom markdown processors - Always wanted to use your favourite home-grown Markdown converter, but couldn’t with Jekyll? Now you can. Simply specify markdown: MyConverterClass and you’re on your way.
+Addition of where and group<em>by Liquid filters - Simplifying your Liquid templates one filter at a time. The where filter selects from an array all items within which have a given value for a property. The group</em>by filter groups all items in an array which have the same value for a given property.
+Switch from Maruku to Kramdown as default markdown converter - Maruku is dead. We’ve replaced it with the converter which has the closest feature parity: Kramdown!
+Check out our changelog for a complete list of all (200+) changes.</path></p>
+
+<p>Many thanks to these 183 contributors for making Jekyll 2.0.0 happen:</p>
+
+<p>Parker Moore, Matt Rogers, maul.esel, Anatol Broder, Zach Gersh, Joel Glovier, Ben Balter, XhmikosR, Coby Chapple, John Piasetzki, Aidan Feldman, Robin Dupret, Pascal Borreli, Troy Swanson, Erik Michaels-Ober, albertogg, Lucas Jenss, Matt Rogers &amp; Persa Zula, Eric Mill, Shigeya Suzuki, Jens Nazarenus, ddavison, Pat Hawks, Rob Wierzbowski, MURAOKA Taro, Casey Lang, Fabian Rodriguez, Greg Karékinian, Zlatan Vasović, Christopher Nicotera, Dmitry Chestnykh, Ryan Morrissey, Jordon, John Hughes, akira yamada, Matt Swanson, Jashank Jeremy, Matthew Iversen, Meeka, liufengyun, Anand Narayan, nitoyon, Geoff Shannon, Benjamin J. Balter, Juan Ignacio Donoso, David Briggs, Benjamin Esham, Slava Pavlutin, Assaf Gelber, Josh Brown, Nick Fagerlund, Davide Ficano, pilosus, Anthony Smith, André Arko, Mikael Konutgan, Matthew Scharley, Dan Tao, scribu, Mort Yao, m, Stephen McDonald, Marcus Stollsteimer, Thomas Torsney-Weir, Jordon Bedwell, Tom Preston-Werner, Lincoln Mullen, Philip Poots, Ivan Tse, Christopher Giroir, Valery Tolstov, Wlodek Bzyl, Xavier Noria, Yi Zeng, Persa Zula, Phil Leggetter, Pirogov Evgenij, Rafael Revi, Rob McGuire-Dale, Rob Muhlestein, Robin Mehner, Roland Warmerdam, Rusty Geldmacher, Sam Rayner, Santeri Paavolainen, Sebastian Morr, Stephan Groß, Steven Spasbo, Tobias Brunner, Tuomas Kareinen, Tyler Margison, Uwe Dauernheim, Yihang Ho, Zach Leatherman, Zequez, andrew morton, andrewhavens, imathis, jannypie, jaybe@jekyll, kk_Ataka, markets, redwallhp, schneems, szymzet, thomasdao, tomsugden, wǒis神仙, 张君君, Noah Slater, Abhi Yerra, Adam Heckler, Ahmed Hazem, Aigars Dzerviniks, Aleksey V. Zapparov, Andreas Möller, Andy Lindeman, Arlen Cuss, Aziz Shamim, Ben Baker-Smith, Ben Hanzl, Ben Hildred, Brian Kim, Brice, Carol Nichols, Chezou, Chris Jones, Christian Grobmeier, Christoph Hochstrasser, Christoph Schiessl, Clint Shryock, Colin Dean, Corey Ward, Damian Lettie, Daniel Schauenberg, David Ensinger, David Paschich, David Sawyer, David Silva Smith, Donald Perry, Doug Johnston, Edward Ball, Eric Dobson, Erik Dungan, Florent Guilleux, Francis, Frederic ROS, GSI2013, Garen Torikian, George Anderson, Giuseppe Capizzi, Ishibashi Hideto, Jarrod Birch, Jeff Kolesky, Jens Bissinger, Jens Krause, John Firebaugh, John Papandriopoulos, Josh Branchaud, Katy DeCorah, Lachlan Holden, Mark Prins, Markus Roth, Martin Charles, Matt Iversen, Matt Sheehan, Matt Swensen, Matthias Vogelgesang, Michael Parker, Miha Rekar, Nathan Youngman, Nick Quaranto, Nick Quinlan, Nick Schonning, Nicolas Alpi, Nicolás Reynolds, Nikkau, 4ensicLog, Octavian Damiean, Olov Lassus, PatrickC8t, Paul Annesley, and Paul Oppenheim.</p>
+
+<p>Happy developing!</p>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "Jekyll.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
