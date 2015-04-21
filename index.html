@@ -41,11 +41,7 @@
     <div class="item">
         <div class="date">
             <div class="little">
-            {{ post.date }}
-            {{ site.time | date_to_string }}
-            {{ page.date | date:"%B %b, %Y" }}
-            { { post.date | date_to_string } }
-            { { post.date | date: "%Y-%m-%d" } }
+<time pubdate="{{ rpost.date | date_to_utc | date: '%Y-%m-%d' }}">{{ rpost.date | date_to_utc | date: "%Y-%m-%d" }}</time>
             </div>
             {{date}}
         </div>
