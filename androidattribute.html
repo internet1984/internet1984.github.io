@@ -52,9 +52,11 @@ padding表示填充，margin表示边距
 *android:layout_alignTop
 
 
-android:layout_width="fill_parent" 满屏幕宽度
+android:orientation="vertical" 表示竖直方式对齐  
+android:orientation="horizontal"表示水平方式对齐  
+android:layout_width="fill_parent"填充整个屏幕
+android:layout_height="wrap_content"随内容适应宽或高
 
-android:layout_width="wrap_content" 按内容圣诞宽度
 
 
 *android:layout_centerHorizontal="true"          //是否支持横屏或竖屏
@@ -132,7 +134,6 @@ FIT_XY / fitXY  把图片不按比例扩大/缩小到View的大小显示
 MATRIX / matrix 用矩阵来绘制，动态缩小放大图片来显示。
 
 ** 要注意一点，Drawable文件夹里面的图片命名是不能大写的。
-
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -161,9 +162,10 @@ android:layout</em>marginLeft="10dip"
 *android:layout</em>toRightOf
 *android:layout_alignTop</p>
 
-<p>android:layout<em>width="fill</em>parent" 满屏幕宽度</p>
-
-<p>android:layout<em>width="wrap</em>content" 按内容圣诞宽度</p>
+<p>android:orientation="vertical" 表示竖直方式对齐 <br>
+android:orientation="horizontal"表示水平方式对齐 <br>
+android:layout<em>width="fill</em>parent"填充整个屏幕
+android:layout<em>height="wrap</em>content"随内容适应宽或高</p>
 
 <p>*android:layout<em>centerHorizontal="true"          //是否支持横屏或竖屏
 *android:layout</em>centerVertical             //这个根据单词的意思：中心垂直
