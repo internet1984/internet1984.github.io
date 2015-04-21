@@ -44,6 +44,8 @@
             {{ post.date }}
             {{ site.time | date_to_string }}
             {{ page.date | date:"%B %b, %Y" }}
+            { { post.date | date_to_string } }
+            { { post.date | date: "%Y-%m-%d" } }
             </div>
             {{date}}
         </div>
