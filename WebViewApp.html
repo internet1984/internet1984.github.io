@@ -28,7 +28,6 @@
 http://blog.csdn.net/jueblog/article/details/12985045
 
 ##activity_main.xml
-
 ~~~~
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -43,8 +42,6 @@ http://blog.csdn.net/jueblog/article/details/12985045
 
 </RelativeLayout>
 ~~~~
-
-
 
 ##MainActivity.java
 ~~~~
@@ -92,6 +89,28 @@ public class MainActivity extends Activity {
     }
 }
 ~~~~
+
+##AndroidManifest.xml
+~~~~
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.example.stevenpan.applicationwebview"
+android:versionCode="1"
+android:versionName="1.0">
+<uses-sdk android:minSdkVersion="10" />
+
+<application android:icon="@drawable/icon" android:label="@string/app_name">
+    <activity android:name=".MainActivity"
+        android:label="@string/app_name">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
+<uses-permission android:name="android.permission.INTERNET"/>
+</manifest>
+~~~~
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -116,21 +135,20 @@ public class MainActivity extends Activity {
 
 <h2 id="mainactivityjava">MainActivity.java</h2>
 
-<p>~~~~
-package com.example.stevenpan.applicationwebview;</p>
+<pre><code>package com.example.stevenpan.applicationwebview;
 
-<p>import android.app.Activity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;</p>
+import android.webkit.WebViewClient;
 
-<p>public class MainActivity extends Activity {
+public class MainActivity extends Activity {
     private WebView webview;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity<em>main);// activity</em>main 为你的布局xml文件名
+        setContentView(R.layout.activity_main);// activity_main 为你的布局xml文件名
         webview = (WebView) findViewById(R.id.webview);
         //设置WebView属性，能够执行Javascript脚本o
         webview.getSettings().setJavaScriptEnabled(true);
@@ -138,31 +156,49 @@ import android.webkit.WebViewClient;</p>
         webview.loadUrl("http://www.isux.us/vas/stevenpan/demo/canvas/html/index.html");
         //设置Web视图
         webview.setWebViewClient(new HelloWebViewClient ());
-    }</p>
-
-<pre><code>@Override
-//设置回退
-//覆盖Activity类的onKeyDown(int keyCoder,KeyEvent event)方法
-public boolean onKeyDown(int keyCode, KeyEvent event) {
-    if ((keyCode == KeyEvent.KEYCODE_BACK) &amp;&amp; webview.canGoBack()) {
-        webview.goBack(); //goBack()表示返回WebView的上一页面
-        return true;
     }
-    return false;
-}
 
-//Web视图
-private class HelloWebViewClient extends WebViewClient {
     @Override
-    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        view.loadUrl(url);
-        return true;
+    //设置回退
+    //覆盖Activity类的onKeyDown(int keyCoder,KeyEvent event)方法
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK) &amp;&amp; webview.canGoBack()) {
+            webview.goBack(); //goBack()表示返回WebView的上一页面
+            return true;
+        }
+        return false;
+    }
+
+    //Web视图
+    private class HelloWebViewClient extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
     }
 }
 </code></pre>
 
-<p>}
-~~~~</p>
+<h2 id="androidmanifestxml">AndroidManifest.xml</h2>
+
+~~~~
+<!--?xml version="1.0" encoding="utf-8"?-->
+
+<p><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.stevenpan.applicationwebview" android:versioncode="1" android:versionname="1.0">
+<uses-sdk android:minsdkversion="10"></uses-sdk></manifest></p>
+
+<p><application android:icon="@drawable/icon" android:label="@string/app_name">
+    <activity android:name=".MainActivity" android:label="@string/app_name">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"></action>
+            <category android:name="android.intent.category.LAUNCHER"></category>
+        </intent-filter>
+    </activity>
+</application>
+<uses-permission android:name="android.permission.INTERNET">
+
+~~~~</uses-permission></p>
 <!-- content end -->
 </div>
 <br>
