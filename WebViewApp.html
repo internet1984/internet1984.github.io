@@ -62,8 +62,8 @@ public class MainActivity extends Activity {
         webview = (WebView) findViewById(R.id.webview);
         //设置WebView属性，能够执行Javascript脚本o
         webview.getSettings().setJavaScriptEnabled(true);
-        //加载需要显示的网页
-        webview.loadUrl("http://www.isux.us/vas/stevenpan/demo/canvas/html/index.html");
+        //webview.loadUrl("http://...");网络连接
+        webview.loadUrl("file:///android_asset/html/index.html");
         //设置Web视图
         webview.setWebViewClient(new HelloWebViewClient ());
     }
@@ -111,6 +111,10 @@ android:versionName="1.0">
 <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
 ~~~~
+
+
+注意：添加assets本地文件时，需通过系统功能添加，鼠标右键，New > Folder > Assets Folder.
+
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -152,8 +156,8 @@ public class MainActivity extends Activity {
         webview = (WebView) findViewById(R.id.webview);
         //设置WebView属性，能够执行Javascript脚本o
         webview.getSettings().setJavaScriptEnabled(true);
-        //加载需要显示的网页
-        webview.loadUrl("http://www.isux.us/vas/stevenpan/demo/canvas/html/index.html");
+        //webview.loadUrl("http://...");网络连接
+        webview.loadUrl("file:///android_asset/html/index.html");
         //设置Web视图
         webview.setWebViewClient(new HelloWebViewClient ());
     }
@@ -182,23 +186,27 @@ public class MainActivity extends Activity {
 
 <h2 id="androidmanifestxml">AndroidManifest.xml</h2>
 
-~~~~
-<!--?xml version="1.0" encoding="utf-8"?-->
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.example.stevenpan.applicationwebview"
+android:versionCode="1"
+android:versionName="1.0"&gt;
+&lt;uses-sdk android:minSdkVersion="10" /&gt;
 
-<p><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.stevenpan.applicationwebview" android:versioncode="1" android:versionname="1.0">
-<uses-sdk android:minsdkversion="10"></uses-sdk></manifest></p>
+&lt;application android:icon="@drawable/icon" android:label="@string/app_name"&gt;
+    &lt;activity android:name=".MainActivity"
+        android:label="@string/app_name"&gt;
+        &lt;intent-filter&gt;
+            &lt;action android:name="android.intent.action.MAIN" /&gt;
+            &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+        &lt;/intent-filter&gt;
+    &lt;/activity&gt;
+&lt;/application&gt;
+&lt;uses-permission android:name="android.permission.INTERNET"/&gt;
+&lt;/manifest&gt;
+</code></pre>
 
-<p><application android:icon="@drawable/icon" android:label="@string/app_name">
-    <activity android:name=".MainActivity" android:label="@string/app_name">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN"></action>
-            <category android:name="android.intent.category.LAUNCHER"></category>
-        </intent-filter>
-    </activity>
-</application>
-<uses-permission android:name="android.permission.INTERNET">
-
-~~~~</uses-permission></p>
+<p>注意：添加assets本地文件时，需通过系统功能添加，鼠标右键，New &gt; Folder &gt; Assets Folder.</p>
 <!-- content end -->
 </div>
 <br>
