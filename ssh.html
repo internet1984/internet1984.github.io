@@ -25,24 +25,95 @@
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
+#SSH常用指令
+
 ##增
+rz 上传文件
 
 ##删
 rm -R <文件名> 删除文件夹
 
 ##改
 
+
 ##查
 df -h 查询文件大小
 du -shx ./*  查询文件大小
+ll 文件列表
 
 ##下载
 sz -ey <文件名> 就可以下载到本地了
+
+
+#VI常用指令
+0或者"Home”键：光标转移到此段的最前面字节处。
+
+$或者"End"键：光标转移到此段的最后面字节处。
+
+n<space>:光标向后移动n个字节。
+
+n<enter>:光标向下移动n行。
+
+gg:光标移动到档案第一行。
+
+GG：光标移动到档案最后一行。
+
+nG：光标移动到档案的第n行。
+
+/word:向下查找word
+
+？word:向上查找word
+
+n：向下搜索
+
+N：向上搜索
+
+dd:删除光标所在的一行。
+
+ndd:删除光标以下的n行。
+
+yy:复制光标所在的行。
+
+nyy:复制光标以下的n行。
+
+p:将复制的数据在光标所在的下一行贴上
+
+u:撤销
+
+<ctrl>+r:恢复
+
+w:保存
+
+w!:强制保存
+
+q:离开
+
+q!:强制离开
+
+：set nu :显示行号
+
+：set nonu:取消显示行号
+
+
+##参考资源
+
+【SHELL】CRONTAB命令
+http://www.cnblogs.com/paulwinflo/p/4089062.html
+
+linux解压zip文件命令
+http://www.linuxso.com/command/unzip.html
+
+SSH 入门教程(常用命令)
+http://bigc.at/common-ssh-commands.orz
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
 <!-- content -->
+<h1 id="ssh">SSH常用指令</h1>
+
 <h2 id="">增</h2>
+
+<p>rz 上传文件</p>
 
 <h2 id="">删</h2>
 
@@ -53,11 +124,73 @@ sz -ey <文件名> 就可以下载到本地了
 <h2 id="">查</h2>
 
 <p>df -h 查询文件大小
-du -shx ./*  查询文件大小</p>
+du -shx ./*  查询文件大小
+ll 文件列表</p>
 
 <h2 id="">下载</h2>
 
 <p>sz -ey &lt;文件名&gt; 就可以下载到本地了</p>
+
+<h1 id="vi">VI常用指令</h1>
+
+<p>0或者"Home”键：光标转移到此段的最前面字节处。</p>
+
+<p>$或者"End"键：光标转移到此段的最后面字节处。</p>
+
+<p>n<space>:光标向后移动n个字节。</space></p>
+
+<p>n<enter>:光标向下移动n行。</enter></p>
+
+<p>gg:光标移动到档案第一行。</p>
+
+<p>GG：光标移动到档案最后一行。</p>
+
+<p>nG：光标移动到档案的第n行。</p>
+
+<p>/word:向下查找word</p>
+
+<p>？word:向上查找word</p>
+
+<p>n：向下搜索</p>
+
+<p>N：向上搜索</p>
+
+<p>dd:删除光标所在的一行。</p>
+
+<p>ndd:删除光标以下的n行。</p>
+
+<p>yy:复制光标所在的行。</p>
+
+<p>nyy:复制光标以下的n行。</p>
+
+<p>p:将复制的数据在光标所在的下一行贴上</p>
+
+<p>u:撤销</p>
+
+<p><ctrl>+r:恢复</ctrl></p>
+
+<p>w:保存</p>
+
+<p>w!:强制保存</p>
+
+<p>q:离开</p>
+
+<p>q!:强制离开</p>
+
+<p>：set nu :显示行号</p>
+
+<p>：set nonu:取消显示行号</p>
+
+<h2 id="">参考资源</h2>
+
+<p>【SHELL】CRONTAB命令
+http://www.cnblogs.com/paulwinflo/p/4089062.html</p>
+
+<p>linux解压zip文件命令
+http://www.linuxso.com/command/unzip.html</p>
+
+<p>SSH 入门教程(常用命令)
+http://bigc.at/common-ssh-commands.orz</p>
 <!-- content end -->
 </div>
 <br>
