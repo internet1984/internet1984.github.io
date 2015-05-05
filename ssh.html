@@ -29,6 +29,7 @@
 
 ##增
 rz 上传文件
+touch miao 创建一个 miao的空文件，如果touch了已有的文件,则会更新那个文件的日期为当前
 
 ##删
 rm -R <文件名> 删除文件夹
@@ -45,6 +46,10 @@ ll 文件列表
 sz -ey <文件名> 就可以下载到本地了
 sz -ey ./* 下载本目所有文件
 
+##MYSQL 数据库
+mysqldump -u 数据库用户名 -p 数据库名 > db_ooxx.sql  导出数据库为db_ooxx.sql
+mysql -u 数据库用户名 -p 数据库名 < db_ooxx.sql --default-character-set=utf8    把当前目录的 db_ooxx.sql 以 utf8 编码导入,当然你原来是gbk就改成gbk
+中文blog经常遇到这个情况,一不小心就 ??? 满脑子都问号了
 
 #linux操作技巧
 ctrl + c 恢复命令行输入状态
@@ -118,7 +123,8 @@ http://bigc.at/common-ssh-commands.orz
 
 <h2 id="">增</h2>
 
-<p>rz 上传文件</p>
+<p>rz 上传文件
+touch miao 创建一个 miao的空文件，如果touch了已有的文件,则会更新那个文件的日期为当前</p>
 
 <h2 id="">删</h2>
 
@@ -138,6 +144,12 @@ ll 文件列表</p>
 
 <p>sz -ey &lt;文件名&gt; 就可以下载到本地了
 sz -ey ./* 下载本目所有文件</p>
+
+<h2 id="mysql">MYSQL 数据库</h2>
+
+<p>mysqldump -u 数据库用户名 -p 数据库名 &gt; db<em>ooxx.sql  导出数据库为db</em>ooxx.sql
+mysql -u 数据库用户名 -p 数据库名 &lt; db<em>ooxx.sql --default-character-set=utf8    把当前目录的 db</em>ooxx.sql 以 utf8 编码导入,当然你原来是gbk就改成gbk
+中文blog经常遇到这个情况,一不小心就 ??? 满脑子都问号了</p>
 
 <h1 id="linux">linux操作技巧</h1>
 
